@@ -5,93 +5,76 @@
  * @format
  */
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react';
+import React, { useCallback } from 'react';
 import {
+  Button,
+  Image,
   SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
-  View,
+  View
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+// import CheckBox from '@react-native-community/checkbox';
+// import { multiply } from '@react-native-community/checkbox'; // import Checkbox from 'cb-module';
+// import Checkbox, { multiply } from './modules/cb-module/src';
+// import CheckBox from '@react-native-community/checkbox';
+import { Blurhash } from 'react-native-blurhash';
+
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: 'white',
+    flex: 1
   };
+  const imageUri = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmCy16nhIbV3pI1qLYHMJKwbH2458oiC9EmA&s';
 
+
+  async function pressBtn(): Promise<void> {
+    // console.log('Function not implemented.', multiply(2, 2));
+
+    const blurhash = await Blurhash.encode(imageUri, 4, 3)
+    console.log(blurhash);
+  }
+
+  const [value, setValue] = React.useState(false);
+
+  function onLoadEnd() {
+    console.log('onLoadEnd called!');
+
+  }
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+      <View style={{ flex: 1, backgroundColor: 'yellow' }} />
+      <View style={{ width: 200, height: 200 }} />
+      <Text testID='text'>lkafdhawer</Text>
+      <Button title='hello' onPress={pressBtn} />
+      {/* <CheckBox value={value} style={{ width: 100, height: 100 }} /> */}
+
+      <View style={{ flex: 1 }}>
+        <Image
+          source={{ uri: imageUri }}
+          style={{ flex: 1 }}
+          onLoadEnd={onLoadEnd}
+        />
+        <Blurhash
+          blurhash="LGFFaXYk^6#M@-5c,1J5@[or[Q6."
+          style={{ width: 200, height: 100 }}
+        />
+      </View>
     </SafeAreaView>
   );
 }

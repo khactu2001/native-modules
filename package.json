@@ -7,11 +7,17 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "release": "cd android/ && gradlew assembleRelease"
   },
   "dependencies": {
+    "@react-native-community/checkbox": "./local/react-native-checkbox",
     "react": "18.3.1",
-    "react-native": "0.75.3"
+    "react-native": "0.75.3",
+    "react-native-awesome-module": "link:./modules\\awesome-module",
+    "react-native-blurhash": "./local/react-native-blurhash",
+    "react-native-date-picker": "^5.0.7",
+    "react-native-dropdown-picker": "^5.4.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

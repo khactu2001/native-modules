@@ -2072,6 +2072,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-community/checkbox@file:./local/react-native-checkbox::locator=AwesomeProject%40workspace%3A.":
+  version: 0.5.17
+  resolution: "@react-native-community/checkbox@file:./local/react-native-checkbox#./local/react-native-checkbox::hash=6244d9&locator=AwesomeProject%40workspace%3A."
+  peerDependencies:
+    react: "*"
+    react-native: ">= 0.62"
+    react-native-windows: ">=0.62"
+  peerDependenciesMeta:
+    react-native-windows:
+      optional: true
+  checksum: f873c4a93356132cc75bb80f466edc41c1a189dbdf068b92229fb8cc12e71a7e6beb14cce66cccc9252d1a26ae270a42313fd955d73a4fd417ead2aa25c4b5fb
+  languageName: node
+  linkType: hard
+
 "@react-native-community/cli-clean@npm:14.1.0":
   version: 14.1.0
   resolution: "@react-native-community/cli-clean@npm:14.1.0"
@@ -2882,6 +2896,7 @@ __metadata:
     "@babel/core": ^7.20.0
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
+    "@react-native-community/checkbox": ./local/react-native-checkbox
     "@react-native/babel-preset": 0.75.3
     "@react-native/eslint-config": 0.75.3
     "@react-native/metro-config": 0.75.3
@@ -2894,6 +2909,10 @@ __metadata:
     prettier: 2.8.8
     react: 18.3.1
     react-native: 0.75.3
+    react-native-awesome-module: "link:./modules\\awesome-module"
+    react-native-blurhash: ./local/react-native-blurhash
+    react-native-date-picker: ^5.0.7
+    react-native-dropdown-picker: ^5.4.6
     react-test-renderer: 18.3.1
     typescript: 5.0.4
   languageName: unknown
@@ -6939,17 +6958,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mime-db@npm:1.52.0":
+"mime-db@npm:1.52.0, mime-db@npm:>= 1.43.0 < 2":
   version: 1.52.0
   resolution: "mime-db@npm:1.52.0"
   checksum: 0d99a03585f8b39d68182803b12ac601d9c01abfa28ec56204fa330bc9f3d1c5e14beb049bafadb3dbdf646dfb94b87e24d4ec7b31b7279ef906a8ea9b6a513f
-  languageName: node
-  linkType: hard
-
-"mime-db@npm:>= 1.43.0 < 2":
-  version: 1.53.0
-  resolution: "mime-db@npm:1.53.0"
-  checksum: 3fd9380bdc0b085d0b56b580e4f89ca4fc3b823722310d795c248f0806b9a80afd5d8f4347f015ad943b9ecfa7cc0b71dffa0db96fa776d01a13474821a2c7fb
   languageName: node
   linkType: hard
 
@@ -7808,6 +7820,42 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
+  languageName: node
+  linkType: hard
+
+"react-native-awesome-module@link:./modules\\awesome-module::locator=AwesomeProject%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "react-native-awesome-module@link:./modules/awesome-module::locator=AwesomeProject%40workspace%3A."
+  languageName: node
+  linkType: soft
+
+"react-native-blurhash@file:./local/react-native-blurhash::locator=AwesomeProject%40workspace%3A.":
+  version: 2.0.3
+  resolution: "react-native-blurhash@file:./local/react-native-blurhash#./local/react-native-blurhash::hash=c1fa01&locator=AwesomeProject%40workspace%3A."
+  peerDependencies:
+    react: ">=16.8.1"
+    react-native: ">=0.60.0-rc.0 <1.0.x"
+  checksum: 5ca8a0fb87d5f5f77df760a2ef4f46a580915f6c0239ea65d55bee3b02dfa8d8a554fb91edeb5e734e713cf954f25360fa29c98b61459deb1173c117969c8729
+  languageName: node
+  linkType: hard
+
+"react-native-date-picker@npm:^5.0.7":
+  version: 5.0.7
+  resolution: "react-native-date-picker@npm:5.0.7"
+  peerDependencies:
+    react: ">= 17.0.1"
+    react-native: ">= 0.64.3"
+  checksum: 94191bf3ce6e88a3acc4ca5e5514eaa6fc15c61666393d85ca258dba3a3efd9145c8fd31ed0f18676d7f083e17f08c760de8193ad24367a65761330084bcdc6b
+  languageName: node
+  linkType: hard
+
+"react-native-dropdown-picker@npm:^5.4.6":
+  version: 5.4.6
+  resolution: "react-native-dropdown-picker@npm:5.4.6"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: d81ee3d68c17107a4d21dbdf9c2fe2ffe4bf4398973d10113139aadc0674221ce5038b945299fba2abc796930ec5e6d5f84291945bf903344493a15b8e2fca43
   languageName: node
   linkType: hard
 
